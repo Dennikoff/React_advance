@@ -7,8 +7,8 @@ import webpack from "webpack";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default {
-  entry: "./src/index.js",
+const config: webpack.Configuration = {
+  entry: "./src/index.ts",
   mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -20,5 +20,19 @@ export default {
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     new webpack.ProgressPlugin(),
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
 };
+
+export default config;
