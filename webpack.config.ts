@@ -6,7 +6,7 @@ import type { BuildEnv, BuildMode } from "./config/build/types/config.ts";
 const __dirname = import.meta.dirname;
 
 export default (env: BuildEnv) => {
-  const entryPath = path.resolve(__dirname, "src", "index.ts");
+  const entryPath = path.resolve(__dirname, "src", "main.tsx");
   const buildPath = path.resolve(__dirname, "dist");
   const htmlPath = path.resolve(__dirname, "public", "index.html");
   
