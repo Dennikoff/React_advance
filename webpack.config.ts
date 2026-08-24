@@ -9,6 +9,7 @@ export default (env: BuildEnv) => {
   const entryPath = path.resolve(__dirname, "src", "main.tsx");
   const buildPath = path.resolve(__dirname, "dist");
   const htmlPath = path.resolve(__dirname, "public", "index.html");
+  const srcPath = path.resolve(__dirname, "src");
   
   const mode: BuildMode = env.mode || "development";
   const isDev = mode === "development";
@@ -20,6 +21,7 @@ export default (env: BuildEnv) => {
       entry: entryPath,
       build: buildPath,
       html: htmlPath,
+      src: srcPath,
     },
     isDev,
     port: PORT,
