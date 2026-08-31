@@ -8,7 +8,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <App />
+        <App /> 
       </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
