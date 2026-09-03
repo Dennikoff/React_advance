@@ -1,11 +1,13 @@
-export function ClassNames(
+type Mods = Record<string, boolean | string>
+
+export function classNames(
   originalClass: string,
-  classDict: Record<string, boolean>,
-  additionalClasses: string[],
+  classDict: Mods = {},
+  additionalClasses: (string | undefined)[] = [],
 ): string {
   const filtredClassNames = [
     originalClass,
-    ...additionalClasses,
+    ...additionalClasses.filter(Boolean),
     ...Object.entries(classDict)
       .filter(([_, value]) => value)
       .map(([key]) => key),
