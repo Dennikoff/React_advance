@@ -26,6 +26,7 @@ export function getBuildLoaders(
           modules: {
             auto: /\.module\.\w+$/i,
             namedExport: false,
+            exportLocalsConvention: "as-is",
             localIdentName: isDev
               ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",

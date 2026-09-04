@@ -1,5 +1,16 @@
-.navbar {
+.Navbar {
   width: 100%;
   padding: 1rem;
   background: var(--inverted-bg-color);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
+
+.mainLinks {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+
