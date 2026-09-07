@@ -3,6 +3,7 @@ import React from "react";
 
 import classes from "./Navbar.module.scss";
 import { AppLink } from "@/shared/ui/AppLink";
+import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 
 interface NavbarProps {
   className?: string;
@@ -11,6 +12,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
+      <ThemeSwitcher />
+
       <div className={classes.mainLinks}>
         <AppLink to="/" variant={"secondary"}>
           Главная страница

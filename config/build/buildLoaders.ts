@@ -16,6 +16,21 @@ export function getBuildLoaders(
     },
   };
 
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -37,5 +52,5 @@ export function getBuildLoaders(
     ],
   };
 
-  return [tsLoader, cssLoader];
+  return [tsLoader, svgLoader, fileLoader, cssLoader];
 }
