@@ -3,7 +3,8 @@ import { useTheme } from "./provider/ThemeProvider/lib/ThemeContext";
 import { classNames } from "@/shared/lib";
 import { AppRouter } from "./provider/router";
 import { Navbar } from "@/widgets/Navbar";
-import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
+import { Sidebar } from "@/widgets/Sidebar/ui/Sidebar/Sidebar";
+import classes from "./styles/App.module.scss";
 
 export const App = () => {
   const { theme } = useTheme();
@@ -11,7 +12,12 @@ export const App = () => {
   return (
     <div className={classNames("app", {}, [theme])}>
       <Navbar />
-      <AppRouter />
+      <div className={classes.appContainer}>
+        <Sidebar />
+        <div className={classes.pageWrapper}>
+          <AppRouter />
+        </div>
+      </div>
     </div>
   );
 };
