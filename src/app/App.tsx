@@ -5,19 +5,23 @@ import { AppRouter } from "./provider/router";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar/ui/Sidebar/Sidebar";
 import classes from "./styles/App.module.scss";
+import { Suspense } from "react";
+
 
 export const App = () => {
   const { theme } = useTheme();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <div className={classes.appContainer}>
-        <Sidebar />
-        <div className={classes.pageWrapper}>
-          <AppRouter />
+      <Suspense fallback="">
+        <Navbar />
+        <div className={classes.appContainer}>
+          <Sidebar />
+          <div className={classes.pageWrapper}>
+            <AppRouter />
+          </div>
         </div>
-      </div>
+      </Suspense>
     </div>
   );
 };
