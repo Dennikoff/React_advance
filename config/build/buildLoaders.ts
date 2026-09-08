@@ -16,6 +16,20 @@ export function getBuildLoaders(
     },
   };
 
+  const babelLoader = {
+      test: /\.(js|tsx|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          targets: "defaults",
+          presets: [
+            ['@babel/preset-env']
+          ]
+        }
+      }
+    }
+
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
@@ -52,5 +66,5 @@ export function getBuildLoaders(
     ],
   };
 
-  return [tsLoader, svgLoader, fileLoader, cssLoader];
+  return [babelLoader, tsLoader, svgLoader, fileLoader, cssLoader, ];
 }

@@ -1,5 +1,5 @@
 import path from "path";
-import { ReactRefreshPlugin } from "@pmmmwh/react-refresh-webpack-plugin";
+import ReactRefreshPlugin  from "@pmmmwh/react-refresh-webpack-plugin";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
 import type { BuildOptions } from "./types/config.ts";
